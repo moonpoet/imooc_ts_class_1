@@ -51,3 +51,6 @@ export {};
 // function foo2(params: string): string {
 //   return "foo";
 // }
+
+// 类装饰器已经学习完成
+// /** 回车生成函数注释
