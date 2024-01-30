@@ -1,4 +1,4 @@
-// 方法装饰器的前置拦截和后置拦截
+// 类方法的装饰器的前置拦截和后置拦截
 
 export {};
 function funDecorator(params: string) {
