@@ -30,5 +30,8 @@ class Person {
 
 const person = new Person("小明", 18);
 
-// !!!调用foo函数时，因为使用了装饰器，且在装饰器内部改变了descriptor.value，所以执行新的descriptor.value所指向的函数
+// !!!调用foo函数时，因为使用了装饰器，且在装饰器内部改变了descriptor.value，所以执行新的descriptor.value所指向的函数, 这是因为装饰器底层源码做了修改，下一节分析源码就会发现
+
+// 原因是源码中的这行代码Object.defineProperty(target, key, r)
+// 当改变descriptor.value后，使用defineProperty将获取后改变的数据属性重新定义到target中，所以当new得到的实例执行foo函数时，执行的是descriptor.value指向的新的函数，而不是之前的函数了
 person.foo("努力, 奋斗");
