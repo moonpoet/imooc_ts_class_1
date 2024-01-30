@@ -6,6 +6,14 @@ class Parent {
   }
 }
 
+class Son1 extends Parent {
+  constructor(...args: any[]) {
+    super(...args);
+  }
+}
+
+const son1 = new Son1("张三", 18);
+
 class Son extends Parent {
   public sex;
   constructor(names: string, age: number, sex: string) {

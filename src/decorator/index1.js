@@ -44,19 +44,3 @@ var Person = /** @class */ (function () {
     Person = __decorate([classDecorator], Person);
     return Person;
 })();
-// function classDecorator1(params?: any) {
-//   return function (targetClass: any) {
-//     // const instance = new targetClass();
-//     // instance.buy();
-//     // console.log(targetClass.name);
-//     console.log(params, "params");
-//   };
-// }
-// @classDecorator1("传递参数的类装饰器")
-// class Person1 {
-//   public job: string = "soft";
-//   constructor() {}
-//   buy() {
-//     console.log(this.job, "job");
-//   }
-// }

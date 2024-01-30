@@ -17,14 +17,9 @@ class Person1 {
   }
 }
 
+const person1 = new Person1();
+
 type R = typeof Person1 extends new (...args: any) => Person1 ? true : false;
 // typeof Person1和new (...args: any) => Person1两者是等价的
-
-const r: Person1 = {
-  job: "soft",
-  buy() {
-    console.log(this.job, "job");
-  },
-};
 
 export {};
