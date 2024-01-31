@@ -36,16 +36,16 @@ console.log((person as any).getNow(), "----------");
 // 如果new的是NewPerson类，那为什么没有test和getNow方法呢???
 // 方法是有的，但是并没有类型提示，也就是说类型定义上有问题,但是始终没有办法将这个类型定义正确
 // 难道只能使用as any吗
-person.getNow();
+// person.getNow();
 // 因为现在处于编译期间，只有在运行后Person才会变为NewPerson，所以现在无法确定person上具有getNow方法
 
 export {};
 
 // 函数类型的定义方法真的很多
-// const foo: (params: string) => string = (params: string) => {
+// const foo: (params: string) => string = (params) => {
 //   return "foo";
 // };
-// const foo1: { (params: string): string } = (params: string) => {
+// const foo1: { (params: string): string } = (params) => {
 //   return "foo";
 // };
 // function foo2(params: string): string {
