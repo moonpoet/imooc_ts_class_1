@@ -16,6 +16,7 @@ function UrlParams(params: string) {
 
 class Test {
   public username: string = 'hello world';
+
   public sayHi(name: string, @UrlParams("方法参数装饰器") age: number) {
     console.log(`Hi`);
   }
@@ -36,7 +37,7 @@ for (const arrayKey in Test.prototype) {
 // });
 
 // Reflect.ownKeys和Object.keys的区别, 见chatGPT
-const obj = { name: 'chen', age: 16 }
+const obj = {name: 'chen', age: 16}
 Reflect.ownKeys(obj).forEach(arrayKey => {
   console.log(arrayKey, 'arrayKey (ES5/ES6)');
 })
@@ -51,4 +52,7 @@ obj['name'] = ''
 type Obj = { name: string, age: number }
 type R = Obj['name'] // 上面的报错类似于Obj[string]
 
-export  {}
+export {}
+
+// 如果定义了一个函数类型有多个参数, 那么定义函数体的时候参数可以少于类型中所定义的参数
+// 也即少参数的函数可以赋给多参数的函数
