@@ -42,7 +42,7 @@ Reflect.ownKeys(obj).forEach(arrayKey => {
   console.log(arrayKey, 'arrayKey (ES5/ES6)');
 })
 let a = 'name'
-obj[a] = ''
+// obj[a] = ''
 
 // 为什么上面的写法会报错?因为a的类型为string,并不是name | age中的某项,取值的过程中类型也会对应判断
 // const obj: Record<string, any> = { name: 'chen', age: 16 }如果这样定义就不会报错了
