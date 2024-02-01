@@ -15,7 +15,40 @@ function UrlParams(params: string) {
 }
 
 class Test {
+  public username: string = 'hello world';
   public sayHi(name: string, @UrlParams("方法参数装饰器") age: number) {
     console.log(`Hi`);
   }
 }
+
+// 只有编译为es5才能获取, 原因是for-in在es5和6上在处理类属性上存在差异
+for (const arrayKey in Test.prototype) {
+  console.log(arrayKey, 'arrayKey')
+}
+
+// => es6用法
+// Object.getOwnPropertyNames(Test.prototype).forEach(arrayKey => {
+//   console.log(arrayKey, 'arrayKey (ES5/ES6)');
+// });
+//
+// Reflect.ownKeys(Test.prototype).forEach(arrayKey => {
+//   console.log(arrayKey, 'arrayKey (ES5/ES6)');
+// });
+
+// Reflect.ownKeys和Object.keys的区别, 见chatGPT
+const obj = { name: 'chen', age: 16 }
+Reflect.ownKeys(obj).forEach(arrayKey => {
+  console.log(arrayKey, 'arrayKey (ES5/ES6)');
+})
+let a = 'name'
+obj[a] = ''
+
+// 为什么上面的写法会报错?因为a的类型为string,并不是name | age中的某项,取值的过程中类型也会对应判断
+// const obj: Record<string, any> = { name: 'chen', age: 16 }如果这样定义就不会报错了
+// 原因就是string不是name | age中的某项
+
+obj['name'] = ''
+type Obj = { name: string, age: number }
+type R = Obj['name'] // 上面的报错类似于Obj[string]
+
+export  {}
