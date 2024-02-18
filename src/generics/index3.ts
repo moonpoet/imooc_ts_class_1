@@ -2,6 +2,7 @@
 
 // 1. 通用函数类型，Fun和Fn两者等价
 type Fun = (...args: any) => any;
+
 interface Fn {
   (...args: any): any;
 }
@@ -12,17 +13,20 @@ type constructorType = new (...args: any) => any;
 class Parent {
   constructor(public user: string) {}
 }
-// Parent.name
+
+console.log(Parent.name);
 // const p = new Parent('tom');
 // const a: Parent = new Parent('tom');
 // 在一个类中, 如Parent类, Parent是一个变量, 也是一个构造函数, 可以通过new创建一个新的实例, 也是一个类型
 
 // 3. 泛型工厂函数, 可用于规范一个类的形状
 type constructorTypes<T> = new (...args: any) => T;
+
 function createFactory<T>(paramsClass: constructorTypes<T>) {
   console.log(paramsClass.name, "被创建");
   return new paramsClass();
 }
+
 const r = createFactory<Parent>(Parent);
 r.user;
 
@@ -31,11 +35,13 @@ r.user;
 function foo(a: string): string {
   return "";
 }
+
 // 4.2 先定义一个函数类型, 用这个函数类型来对函数创建时进行约束
 // type Foo = (a: string) => string;
 interface Foo {
   (a: string): string;
 }
+
 const foo1: Foo = () => {
   return "";
 };

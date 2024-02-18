@@ -1,6 +1,10 @@
 // 继承
 class Parent {
-  constructor(public names: string, public age: number) {}
+  constructor(
+    public names: string,
+    public age: number,
+  ) {}
+
   public getName() {
     console.log("hello world");
   }
@@ -8,6 +12,7 @@ class Parent {
 
 class Son1 extends Parent {
   constructor(...args: any[]) {
+    // @ts-ignore
     super(...args);
   }
 }
@@ -16,12 +21,14 @@ const son1 = new Son1("张三", 18);
 
 class Son extends Parent {
   public sex;
+
   constructor(names: string, age: number, sex: string) {
     // 将属性传递到父类中, 给子类实例对象属性赋值
     // 相当于Parent.call(this, names, age);
     super(names, age);
     this.sex = sex;
   }
+
   public getName() {
     // 继承可重写父类方法, 通过super可以调用父类方法
     super.getName();

@@ -1,4 +1,5 @@
 function isString(params: any): params is string {
+  // 类型保护
   return typeof params === "string";
 }
 

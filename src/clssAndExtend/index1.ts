@@ -15,7 +15,7 @@ class Person {
 
 // private修饰符表示私有, public修饰符表示公开
 // static修饰符表示静态, 实例不能访问静态属性或方法, 只能由类名调用
-// !!!静态方法中只能访问静态属性
+// !!!静态属性只能由类名或静态方法访问, 非静态方法不能访问静态属性
 
 Person.getInstance();
 
@@ -42,6 +42,7 @@ Time.getNow();
 class Person_ {
   static instance: Person_ = new Person_();
 
+  // 私有构造器, 外部不可以通过new进行实例化, 但是内部可以
   private constructor() {}
 }
 

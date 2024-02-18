@@ -48,3 +48,10 @@ const _r: R1 = {
   age: 20,
   job: "teacher",
 };
+
+// 这里需要限制args的类型
+function baz(...args: string[]) {
+  return args;
+}
+
+baz("1", "2");

@@ -3,6 +3,7 @@
 interface Person {
   name: string;
 }
+
 // 定义一个特定接口的数组1
 const people: Person[] = [{ name: "张三" }, { name: "李四" }, { name: "王五" }];
 // 定义一个特定接口的数组2
@@ -52,3 +53,6 @@ const o: Record<string, any> = {};
 o.name = "";
 
 // Record可以用于定义对象类型，在工作中使用很广泛
+
+type A = object;
+type B = Record<string, any>;
