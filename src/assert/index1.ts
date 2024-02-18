@@ -13,8 +13,7 @@ class Son extends Parent {
 // const son = new Son() as Parent;
 // console.log(son instanceof Parent, "result");
 
-const son = new Son();
-
-son.foo();
+// const son = new Son();
+// son.foo();
 
 export {};

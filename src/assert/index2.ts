@@ -11,12 +11,14 @@ class Child_1 extends Parent {
   eat() {
     console.log("child_1 eat");
   }
+
+  foo() {}
 }
 
 class Child_2 extends Parent {
-  eat() {
-    console.log("child_2 eat");
-  }
+  // eat() {
+  //   console.log("child_2 eat");
+  // }
 }
 
 class Demo {
