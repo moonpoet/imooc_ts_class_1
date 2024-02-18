@@ -1,6 +1,7 @@
 // part1: 类的单例模式1 => 调用时创建
 class Person {
   static instance: Person;
+
   private constructor() {}
 
   static getInstance() {
@@ -11,6 +12,7 @@ class Person {
     return this.instance;
   }
 }
+
 // private修饰符表示私有, public修饰符表示公开
 // static修饰符表示静态, 实例不能访问静态属性或方法, 只能由类名调用
 // !!!静态方法中只能访问静态属性
@@ -23,9 +25,11 @@ export {};
 // 可以使用单例模式, 也可以不使用
 export default class Time {
   private constructor() {}
+
   public static getNow() {
     return new Date().toLocaleString();
   }
+
   public static setDate(time: string) {
     return new Date(time);
   }
@@ -37,9 +41,10 @@ Time.getNow();
 // part3: 类的单例模式2 => 立即创建 代码更加简洁
 class Person_ {
   static instance: Person_ = new Person_();
+
   private constructor() {}
 }
 
-Person_.instance;
+const person_ = Person_.instance;
 
 // review ----------------------------------------- complete

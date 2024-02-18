@@ -1,6 +1,9 @@
 // 类
 class Person {
-  constructor(public personName: string, public age: number) {}
+  constructor(
+    public personName: string,
+    public age: number,
+  ) {}
 
   // 函数重载, 可以用在类中, 注意实现签名中的any类型定义
   foo(id: number): number[];
@@ -19,4 +22,4 @@ console.log(person);
 
 export {};
 
-// review ----------------------------------------- complete
+// 成为一个优秀的程序员, 优秀的架构师, 优秀的人
